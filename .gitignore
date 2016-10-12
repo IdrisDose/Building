@@ -64,14 +64,3 @@ Thumbs.db
 .settings
 .checkstyle
 .factorypath
-run
-./eclipse
-nbproject
-atlassian-ide-plugin.xml
-build.xml
-nb-configuration.xml
-*.iml
-*.ipr
-*.iws
-/.apt_generated/
-*.launch
