@@ -15,19 +15,29 @@ import model.Person;
  * nzdose_000 is my computer username
  */
 public class LiftController extends Controller<Lift> {
-    @FXML private Text currentLevelTxt;
-    @FXML private Text bottomLevelTxt;
-    @FXML private Text topLevelTxt;
-    @FXML private Text directionTxt;
-    @FXML private Text subheading;
-    @FXML private Button closeBtn;
-    @FXML private ListView<Person> passengersLv;
-    @FXML private ListView<Person> queueLv;
-    @FXML private LevelView levelsLv;
+    @FXML
+    private Text currentLevelTxt;
+    @FXML
+    private Text bottomLevelTxt;
+    @FXML
+    private Text topLevelTxt;
+    @FXML
+    private Text directionTxt;
+    @FXML
+    private Text subheading;
+    @FXML
+    private Button closeBtn;
+    @FXML
+    private ListView<Person> passengersLv;
+    @FXML
+    private ListView<Person> queueLv;
+    @FXML
+    private LevelView levelsLv;
 
     public final Lift getLift() {
         return model;
     }
+
     private final Stage getStage() {
         return stage;
     }

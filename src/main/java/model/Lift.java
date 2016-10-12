@@ -38,24 +38,31 @@ public class Lift {
     public final int getNumber() {
         return number;
     }
+
     public final int getBottom() {
         return bottom;
     }
+
     public final int getTop() {
         return top;
     }
+
     public final int getLevel() {
         return level.get();
     }
+
     public final int getDirection() {
         return direction.get();
     }
+
     public final int getPassengerSize() {
         return passengersSize.get();
     }
+
     public final int getQueueSize() {
         return queueSize.get();
     }
+
     public final String getDirectionText() {
         return directionText.get();
     }
@@ -63,21 +70,27 @@ public class Lift {
     public ReadOnlyStringProperty directionTextProperty() {
         return directionText;
     }
+
     public ReadOnlyIntegerProperty levelProperty() {
         return level;
     }
+
     public ReadOnlyIntegerProperty queueSizeProptery() {
         return queueSize;
     }
+
     public ReadOnlyIntegerProperty passengerSizeProperty() {
         return passengersSize;
     }
+
     public ReadOnlyIntegerProperty directionProperty() {
         return direction;
     }
+
     public ObservableList<Person> getPassengers() {
         return passengers;
     }
+
     public ObservableList<Person> getQueue() {
         return queue;
     }
@@ -151,7 +164,7 @@ public class Lift {
     private boolean board() {
         int count = 0;
         for (Person person : new LinkedList<Person>(queue))
-            if(!person.isAboard()) //Added this to check if they are aboard, if they are skip boarding.
+            if (!person.isAboard()) //Added this to check if they are aboard, if they are skip boarding.
                 if (person.canBoard(getLevel(), direction.get())) {
                     board(person);
                     count++;

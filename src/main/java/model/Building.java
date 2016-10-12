@@ -64,15 +64,19 @@ public class Building {
     public final int getBottom() {
         return bottom;
     }
+
     public final int getTop() {
         return top;
     }
+
     public final int getDistance() {
         return top - bottom;
     }
+
     public final int getDelay() {
         return delay;
     }
+
     public final int getTime() {
         return time.get();
     }
@@ -84,9 +88,11 @@ public class Building {
     public ReadOnlyIntegerProperty timeProperty() {
         return time;
     }
+
     public final ObservableList<Lift> getLifts() {
         return lifts;
     }
+
     public final ObservableList<Person> getPeople() {
         return people;
     }

@@ -7,18 +7,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
-    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center"
+      styleClass="root" prefWidth="420" spacing="20">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
     <!-- Title -->
     <HBox alignment="CENTER_LEFT">
-        <padding><Insets top="10" right="25" bottom="10" left="20"/></padding>
+        <padding>
+            <Insets top="10" right="25" bottom="10" left="20"/>
+        </padding>
         <ImageView>
-            <image><Image url="@building.png"></Image></image>
+            <image>
+                <Image url="@building.png"></Image>
+            </image>
         </ImageView>
 
         <VBox alignment="TOP_LEFT">
-            <padding><Insets top="0" right="30" bottom="0" left="30"/></padding>
+            <padding>
+                <Insets top="0" right="30" bottom="0" left="30"/>
+            </padding>
             <Text text="Lift System" styleClass="heading"/>
             <Text text="Call Lift" styleClass="subheading"/>
         </VBox>

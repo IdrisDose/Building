@@ -49,9 +49,11 @@ public class LevelView extends HBox {
     public final int getBottom() {
         return bottom == null ? 0 : bottom.getValue();
     }
+
     public final int getLevel() {
         return level == null ? 0 : level.getValue();
     }
+
     public final int getTop() {
         return top == null ? 0 : top.getValue();
     }
@@ -59,9 +61,11 @@ public class LevelView extends HBox {
     public void setBottom(int bottom) {
         this.bottom.set(bottom);
     }
+
     public void setTop(int top) {
         this.top.set(top);
     }
+
     public void setLevel(int level) {
         this.level.set(level);
     }
@@ -69,9 +73,11 @@ public class LevelView extends HBox {
     public IntegerProperty levelProperty() {
         return level;
     }
+
     public ReadOnlyIntegerProperty bottomProperty() {
         return bottom;
     }
+
     public ReadOnlyIntegerProperty topProperty() {
         return top;
     }

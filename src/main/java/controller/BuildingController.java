@@ -18,27 +18,42 @@ import java.io.IOException;
  * Cleanup on 3/10/2016 at 12:55AM by Idris
  */
 public class BuildingController extends Controller<Building> {
-    @FXML private Slider delaySl;
-    @FXML private ListView<Lift> liftsLv;
-    @FXML private TableView<Lift> liftsTv;
-    @FXML private Button callBtn;
-    @FXML private Button viewBtn;
-    @FXML private Button peopleBtn;
-    @FXML private Button exitBtn;
-    @FXML private Text timeTxt;
+    @FXML
+    private Slider delaySl;
+    @FXML
+    private ListView<Lift> liftsLv;
+    @FXML
+    private TableView<Lift> liftsTv;
+    @FXML
+    private Button callBtn;
+    @FXML
+    private Button viewBtn;
+    @FXML
+    private Button peopleBtn;
+    @FXML
+    private Button exitBtn;
+    @FXML
+    private Text timeTxt;
 
-    @FXML private TableColumn<Lift, String> liftClm;
-    @FXML private TableColumn<Lift, String> levelClm;
-    @FXML private TableColumn<Lift, String> directionClm;
-    @FXML private TableColumn<Lift, String> passengersClm;
-    @FXML private TableColumn<Lift, String> waitingClm;
+    @FXML
+    private TableColumn<Lift, String> liftClm;
+    @FXML
+    private TableColumn<Lift, String> levelClm;
+    @FXML
+    private TableColumn<Lift, String> directionClm;
+    @FXML
+    private TableColumn<Lift, String> passengersClm;
+    @FXML
+    private TableColumn<Lift, String> waitingClm;
 
     public final Building getBuilding() {
         return model;
     }
+
     public final Stage getStage() {
         return stage;
     }
+
     //public Lift getLift(){ return liftsLv.getSelectionModel().getSelectedItem();}
     public Lift getLift() {
         return liftsTv.getSelectionModel().getSelectedItem();

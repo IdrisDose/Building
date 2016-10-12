@@ -8,17 +8,24 @@
 <?import javafx.scene.text.Text?>
 <?import model.LevelView?>
 <?import java.net.URL?>
-<VBox fx:controller="controller.LiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
-    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+<VBox fx:controller="controller.LiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root"
+      prefWidth="420" spacing="20">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
     <!-- Heading -->
     <HBox alignment="CENTER_LEFT">
         <ImageView>
-            <image><Image url="@building.png"></Image></image>
+            <image>
+                <Image url="@building.png"></Image>
+            </image>
         </ImageView>
 
         <VBox alignment="TOP_LEFT">
-            <padding><Insets top="0" right="30" bottom="0" left="30"/></padding>
+            <padding>
+                <Insets top="0" right="30" bottom="0" left="30"/>
+            </padding>
             <Text text="Lift System" styleClass="heading"/>
             <Text fx:id="subheading" styleClass="subheading"/>
         </VBox>
@@ -26,8 +33,9 @@
 
     <!-- Lift Details -->
     <HBox spacing="20" alignment="CENTER">
-        <LevelView fx:id="levelsLv" styleClass="ListView" bottom="${controller.lift.bottom}" top="${controller.lift.top}" level="${controller.lift.level}"  />
-        <Text fx:id="directionTxt" styleClass="direction" />
+        <LevelView fx:id="levelsLv" styleClass="ListView" bottom="${controller.lift.bottom}"
+                   top="${controller.lift.top}" level="${controller.lift.level}"/>
+        <Text fx:id="directionTxt" styleClass="direction"/>
     </HBox>
 
     <!-- Old Lift View

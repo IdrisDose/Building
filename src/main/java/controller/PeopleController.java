@@ -17,21 +17,31 @@ import model.Person;
  * nzdose_000 is my computer username
  */
 public class PeopleController extends Controller<Building> {
-    @FXML private Button closeBtn;
-    @FXML private TableView<Person> peopleTv;
-    @FXML private Text subheading;
-    @FXML private TableColumn<Person, String> idClm;
-    @FXML private TableColumn<Person, String> nameClm;
-    @FXML private TableColumn<Person, String> levelClm;
-    @FXML private TableColumn<Person, String> destinationClm;
-    @FXML private TableColumn<Person, String> aboardClm;
+    @FXML
+    private Button closeBtn;
+    @FXML
+    private TableView<Person> peopleTv;
+    @FXML
+    private Text subheading;
+    @FXML
+    private TableColumn<Person, String> idClm;
+    @FXML
+    private TableColumn<Person, String> nameClm;
+    @FXML
+    private TableColumn<Person, String> levelClm;
+    @FXML
+    private TableColumn<Person, String> destinationClm;
+    @FXML
+    private TableColumn<Person, String> aboardClm;
 
     public final Building getBuilding() {
         return model;
     }
+
     public ObservableList<Person> getPeople() {
         return getBuilding().getPeople();
     }
+
     private Stage getStage() {
         return stage;
     }
