@@ -1,4 +1,11 @@
-language: java
+sudo: required
+dist: trusty
 
+language: java
 jdk:
+  - openjdk8
   - oraclejdk8
+
+git:
+  submodules: false
+before_install: git submodule update --init --recursive
