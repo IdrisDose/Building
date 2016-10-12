@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<VBox fx:controller="controller.BuildingController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
+    <!-- padding -->
+    <padding><Insets top="0" right="10" bottom="0" left="10"/></padding>
+
+    <!-- Heading -->
+    <HBox alignment="CENTER_LEFT">
+        <ImageView>
+            <image><Image url="@building.png"></Image></image>
+        </ImageView>
+
+        <VBox alignment="TOP_LEFT">
+            <padding><Insets top="0" right="30" bottom="0" left="30"/></padding>
+            <Text text="Lift System" styleClass="heading"/>
+            <Text text="Building" styleClass="subheading"/>
+        </VBox>
+    </HBox>
+
+    <!-- Lifts ListView -->
+    <!--<ListView fx:id="liftsLv" prefHeight="75" maxWidth="200" />-->
+
+    <!--Lifts TableView -->
+    <TableView fx:id="liftsTv" prefWidth="320" prefHeight="100" items="${controller.building.lifts}">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="liftClm" text="Lift"/>
+            <TableColumn fx:id="levelClm" text="Level" style="-fx-alignment: CENTER-LEFT;" />
+            <TableColumn fx:id="directionClm" text="Direction"/>
+            <TableColumn fx:id="passengersClm" text="Passengers"/>
+            <TableColumn fx:id="waitingClm" text="Waiting"/>
+        </columns>
+    </TableView>
+
+
+
+    <!-- Button -->
+    <HBox spacing="5" alignment="CENTER">
+        <Button fx:id="callBtn" text="Call Lift" styleClass="button" onAction="#handleCall"/>
+        <Button fx:id="viewBtn" text="View Lift" styleClass="button" onAction="#handleViewLift" disable="true"/>
+        <Button fx:id="peopleBtn" text="People" styleClass="button" onAction="#handlePeople"/>
+        <Button fx:id="exitBtn" text="Exit" styleClass="button" onAction="#handleExit"/>
+    </HBox>
+
+    <!-- Delay slider and Time text -->
+    <HBox>
+        <Slider fx:id="delaySl" prefWidth="300" min="1" max="10" snapToTicks="true" majorTickUnit="1" minorTickCount="0" showTickMarks="true" showTickLabels="true"/>
+        <Text text="Time: " styleClass="time"/> <Text fx:id="timeTxt" styleClass="time"/>
+    </HBox>
+
+    <!-- Stylesheets -->
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>
