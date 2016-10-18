@@ -209,6 +209,33 @@ public class Lift {
         return level >= bottom && level <= top;
     }
 
+    public String getBottomSpace(){
+        String s="";
+        for (int i = 0; i <= this.getBottom(); i++) {
+            s += " ";
+        }
+        s+="|";
+        return s;
+    }
+    public String getBottomToLevel(){
+        String s = "";
+        for (int i = this.getBottom(); i < this.getLevel(); i++) {
+            s += " ";
+        }
+        s += getLevel();
+        return s;
+    }
+
+    public String getTopSpace(){
+        String s = "";
+        for (int i = this.getLevel(); i < this.getTop(); i++) {
+            s += " ";
+        }
+        s += "|";
+
+        return s;
+    }
+
     private void startListeners() {
         passengers.addListener(new ListChangeListener<Person>() {
             @Override

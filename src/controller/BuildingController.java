@@ -166,21 +166,9 @@ public class BuildingController extends Controller<Building> {
                     if (getTableRow() != null) {
                         Lift l = (Lift) getTableRow().getItem();
 
-
-                        for (int i = 0; i <= l.getBottom(); i++) {
-                            s += " ";
-                        }
-                        s += "|";
-
-                        for (int i = l.getBottom(); i < l.getLevel(); i++) {
-                            s += " ";
-                        }
-                        s += item;
-
-                        for (int i = l.getLevel(); i < l.getTop(); i++) {
-                            s += " ";
-                        }
-                        s += "|";
+                        s = l.getBottomSpace();
+                        s+= l.getBottomToLevel();
+                        s+= l.getTopSpace();
                     }
                     //System.out.println(item);
                     setText(s);

@@ -29,19 +29,15 @@ public class Person {
     public final int getId() {
         return id.get();
     }
-
     public final String getName() {
         return name.get();
     }
-
     public final int getLevel() {
         return level.get();
     }
-
     public final int getDestination() {
         return destination.get();
     }
-
     public final boolean isAboard() {
         return aboard.get();
     }
@@ -49,19 +45,15 @@ public class Person {
     public StringProperty aboardProperty() {
         return aboardText;
     }
-
     public ReadOnlyIntegerProperty idProperty() {
         return id;
     }
-
     public IntegerProperty destinationProperty() {
         return destination;
     }
-
     public IntegerProperty levelProperty() {
         return level;
     }
-
     public ReadOnlyStringProperty nameProperty() {
         return name;
     }

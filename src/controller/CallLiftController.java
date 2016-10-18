@@ -16,27 +16,21 @@ import model.Person;
  * nzdose_000 is my computer username
  */
 public class CallLiftController extends Controller<Building> {
-    @FXML
-    private Button cancelBtn;
-    @FXML
-    private Button callBtn;
-    @FXML
-    private ComboBox<Person> callerCb;
-    @FXML
-    private TextField destinationTf;
-    @FXML
-    private Text errorText;
+    @FXML private Button cancelBtn;
+    @FXML private Button callBtn;
+    @FXML private ComboBox<Person> callerCb;
+    @FXML private TextField destinationTf;
+    @FXML private Text errorText;
 
     public final Building getBuilding() {
         return model;
     }
-
     public final Stage getStage() {
         return stage;
     }
 
     private Person getSelectedPerson() {
-        return callerCb.getSelectionModel().isEmpty() ? null : callerCb.getSelectionModel().getSelectedItem();
+        return callerCb.getSelectionModel().isEmpty() ? null :  callerCb.getSelectionModel().getSelectedItem();
     }
 
     @FXML
