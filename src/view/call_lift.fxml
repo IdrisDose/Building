@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
+<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="30">
     <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
     <!-- Title -->

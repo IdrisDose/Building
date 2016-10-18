@@ -9,7 +9,7 @@
 <?import java.net.URL?>
 <VBox fx:controller="controller.BuildingController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
     <!-- padding -->
-    <padding><Insets top="0" right="10" bottom="0" left="10"/></padding>
+    <padding><Insets right="10"  left="10"/></padding>
 
     <!-- Heading -->
     <HBox alignment="CENTER_LEFT">
@@ -22,6 +22,7 @@
             <Text text="Lift System" styleClass="heading"/>
             <Text text="Building" styleClass="subheading"/>
         </VBox>
+        <padding><Insets bottom="10"/></padding>
     </HBox>
 
     <!-- Lifts ListView -->
@@ -45,6 +46,7 @@
 
     <!-- Button -->
     <HBox spacing="5" alignment="CENTER">
+        <padding><Insets top="10"/></padding>
         <Button fx:id="callBtn" text="Call Lift" styleClass="button" onAction="#handleCall"/>
         <Button fx:id="viewBtn" text="View Lift" styleClass="button" onAction="#handleViewLift" disable="true"/>
         <Button fx:id="peopleBtn" text="People" styleClass="button" onAction="#handlePeople"/>

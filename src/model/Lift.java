@@ -251,6 +251,7 @@ public class Lift {
             }
         });
 
+
         direction.addListener((o, oldValue, newValue) -> {
             int newVal = newValue.intValue();
             switch (newVal) {
@@ -267,6 +268,7 @@ public class Lift {
                     directionText.set("--");
                     break;
             }
+
         });
     }
 

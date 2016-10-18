@@ -48,18 +48,21 @@ public class CallLiftController extends Controller<Building> {
     private void handleCall(ActionEvent event) throws Exception {
         Person person = getSelectedPerson();
         int destination = 0;
-        if (!destinationTf.getText().isEmpty())
-            destination = Integer.parseInt(destinationTf.getText());
+
+        if (!destinationTf.getText().isEmpty()) {
+            if(destinationTf.getText().matches("[0-9]*"))
+                destination = Integer.parseInt(destinationTf.getText());
+        }
 
         if (person != null)
             if (destination == 0)
                 errorText.textProperty().set("Destination must be an integer");
             else if (!getBuilding().call(person, destination))
-                errorText.textProperty().set("No suitable lift found");
+                errorText.textProperty().set("No suitable lift found.");
             else
                 getStage().close();
         else
-            errorText.textProperty().set("You must select a caller");
+            errorText.textProperty().set("You must select a caller.");
     }
 
 }
