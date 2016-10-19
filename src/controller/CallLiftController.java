@@ -44,25 +44,24 @@ public class CallLiftController extends Controller<Building> {
     }
 
     //Not going to move this to lambda as it's wayy to big.
-    //UPDATE 19/10/2016 - Re-reade requirements and saw that I need to pass these as errors instead.
+    //UPDATE 19/10/2016 - Re-read requirements and saw that I need to pass these as errors instead.
+    //Changed 0 to -1 ... because why not?
     @FXML
     private void handleCall(ActionEvent event) throws Exception {
         try {
             Person person = getSelectedPerson();
-            int destination = 0;
+            int destination = -1;
 
             if (!destinationTf.getText().isEmpty())
                 if (destinationTf.getText().matches("[0-9]*"))
                     destination = Integer.parseInt(destinationTf.getText());
 
-
             if (person != null)
-                if (destination == 0)
-                    throw new Exception("Destination must be an integer");
-                else {
+                if (destination != -1) {
                     getBuilding().call(person, destination);
                     getStage().close();
-                }
+                }else
+                    throw new Exception("Destination must be an integer.");
             else
                 throw new Exception ("You must select a caller.");
         } catch (Exception e){
