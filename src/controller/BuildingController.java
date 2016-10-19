@@ -89,14 +89,12 @@ public class BuildingController extends Controller<Building> {
         ViewLoader.showStage(building, "/view/call_lift.fxml", "Building", new Stage());
     }
 
+    //Removed the check if lift is null because the button is disabled when there is no lift object selected.
     @FXML
     public void handleViewLift(ActionEvent event) throws IOException {
         //Lift lift = liftsLv.getSelectionModel().getSelectedItem();
         Lift lift = liftsTv.getSelectionModel().getSelectedItem();
-        if (lift != null) {
-            ViewLoader.showStage(lift, "/view/lift.fxml", lift.toString(), new Stage());
-        } else
-            errorMessage("Lift");
+        ViewLoader.showStage(lift, "/view/lift.fxml", lift.toString(), new Stage());
     }
 
     @FXML
@@ -118,10 +116,6 @@ public class BuildingController extends Controller<Building> {
      */
     private int getDelay() {
         return (int) delaySl.getValue();
-    }
-
-    private void errorMessage(String obj) {
-        System.out.println("No " + obj + " selected.");
     }
 
     private void startListeners() {

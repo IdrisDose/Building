@@ -97,8 +97,10 @@ public class Lift {
 
     // FUNCTIONS and PROCEDURES
 
-    public void call(Person person) {
-        queue.add(person);
+    //Added fix for trying to call person while they are aboard.
+    public void call(Person person){
+        if (!getPassengers().contains(person))
+            queue.add(person);
     }
 
     private void board(Person person) {
@@ -161,14 +163,15 @@ public class Lift {
             return null;
     }
 
+    //Previous "thought-to-be" fix was here but I removed it.
+    //Placed new fix at lift.call(person) (line 101);
     private boolean board() {
         int count = 0;
         for (Person person : new LinkedList<Person>(queue))
-            if (!person.isAboard()) //Added this to check if they are aboard, if they are skip boarding.
-                if (person.canBoard(getLevel(), direction.get())) {
-                    board(person);
-                    count++;
-                }
+            if (person.canBoard(getLevel(), direction.get())) {
+                board(person);
+                count++;
+            }
         return count > 0;
     }
 
@@ -217,6 +220,7 @@ public class Lift {
         s+="|";
         return s;
     }
+
     public String getBottomToLevel(){
         String s = "";
         for (int i = this.getBottom(); i < this.getLevel(); i++) {
@@ -251,8 +255,8 @@ public class Lift {
 
 
         direction.addListener((o, oldValue, newValue) -> {
-            int newVal = newValue.intValue();
-            switch (newVal) {
+            int observable = o.getValue().intValue();
+            switch (observable) {
                 case -1:
                     directionText.set("DOWN");
                     break;

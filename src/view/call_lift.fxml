@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="30">
-    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+<VBox fx:controller="controller.CallLiftController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" spacing="30">
+    <padding><Insets top="20" right="10" bottom="20" left="10"/></padding>
 
     <!-- Title -->
     <HBox alignment="CENTER_LEFT">
-        <padding><Insets top="10" right="25" bottom="10" left="20"/></padding>
+        <!--<padding><Insets top="10" right="25" bottom="10" left="20"/></padding>-->
         <ImageView>
             <image><Image url="@building.png"></Image></image>
         </ImageView>

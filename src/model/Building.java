@@ -84,10 +84,10 @@ public class Building {
     public ReadOnlyIntegerProperty timeProperty() {
         return time;
     }
-    public final ObservableList<Lift> getLifts() {
+    public ObservableList<Lift> getLifts() {
         return lifts;
     }
-    public final ObservableList<Person> getPeople() {
+    public ObservableList<Person> getPeople() {
         return people;
     }
 

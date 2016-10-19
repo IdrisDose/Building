@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PeopleController" alignment="center" styleClass="root"
-      prefWidth="420" spacing="20">
+      prefWidth="460" spacing="20">
     <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
+        <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
     <!-- Heading -->
@@ -22,7 +22,7 @@
             </image>
         </ImageView>
 
-        <VBox alignment="TOP_LEFT">
+        <VBox>
             <padding>
                 <Insets top="0" right="30" bottom="0" left="30"/>
             </padding>
@@ -32,7 +32,7 @@
     </HBox>
 
     <!-- Table of People -->
-    <TableView fx:id="peopleTv" prefWidth="300" prefHeight="150" items="${controller.building.people}">
+    <TableView fx:id="peopleTv" prefWidth="310" prefHeight="200" items="${controller.building.people}">
         <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
         </columnResizePolicy>

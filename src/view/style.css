@@ -64,7 +64,6 @@ Text {
 }
 
 .LevelView {
-    -fx-border-color: grey;
+    -fx-border-color: black;
     -fx-border-size: 2px;
-    -fx-skin: "model.LevelView.LevelViewSkin";
 }

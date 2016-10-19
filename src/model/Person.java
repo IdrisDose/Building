@@ -121,14 +121,11 @@ public class Person {
     }
 
     private void startListeners() {
-        aboard.addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (aboard.get())
-                    aboardText.set("Yes");
-                else
-                    aboardText.set("No");
-            }
-        });
+       aboard.addListener((observable, oldValue, newValue) -> {
+           if (observable.getValue())
+               aboardText.set("Yes");
+           else
+               aboardText.set("No");
+       });
     }
 }

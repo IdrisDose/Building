@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<VBox fx:controller="controller.BuildingController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="420" spacing="20">
+<VBox fx:controller="controller.BuildingController" xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="root" prefWidth="455" spacing="20">
     <!-- padding -->
     <padding><Insets right="10"  left="10"/></padding>
 
@@ -54,7 +54,7 @@
     </HBox>
 
     <!-- Delay slider and Time text -->
-    <HBox>
+    <HBox alignment="CENTER">
         <Slider fx:id="delaySl" prefWidth="300" min="1" max="10" snapToTicks="true" majorTickUnit="1" minorTickCount="0" showTickMarks="true" showTickLabels="true"/>
         <Text text="Time: " styleClass="time"/> <Text fx:id="timeTxt" styleClass="time"/>
     </HBox>

@@ -89,15 +89,15 @@ public class LevelView extends HBox {
             if (isThisLevel())
                 rect.setStyle("-fx-fill: #ff5722;");
 
-            txt.setStyle("-fx-font-size: 20px;\n -fx-fill: #212121;\n -fx-padding:5px;");
+            txt.setStyle("-fx-font-size: 28px;\n -fx-fill: black;\n -fx-padding:10px;\n -fx-font-weight: bold;");
 
             this.text.addListener(change -> {
                 setThisLevel(currLevel);
-                System.out.println("Level: " + isThisLevel());
+                //System.out.println("Level: " + isThisLevel());
                 if (isThisLevel())
                     rect.setStyle("-fx-fill: #ff5722;");
 
-                txt.setStyle("-fx-font-size: 20px;\n -fx-fill: #212121;\n -fx-padding:5px;");
+                txt.setStyle("-fx-font-size: 28px;\n -fx-fill: #212121;\n -fx-padding:10px;\n -fx-font-weight: bold;");
                 getChildren().addAll(rect, txt);
             });
             getChildren().addAll(rect, txt);
