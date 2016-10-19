@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Building;
@@ -37,11 +38,12 @@ public class CallLiftController extends Controller<Building> {
     private void initialize() {
         //Added the to prevent layout messup
         getStage().setResizable(false);
+        getStage().getIcons().add(new Image("/view/building.png"));
 
         callerCb.setPromptText("choose");
-        callerCb.getItems().addAll(getBuilding().getPeople());
         cancelBtn.onActionProperty().set(event -> getStage().close());
     }
+
 
     //Not going to move this to lambda as it's wayy to big.
     //UPDATE 19/10/2016 - Re-read requirements and saw that I need to pass these as errors instead.
@@ -58,9 +60,8 @@ public class CallLiftController extends Controller<Building> {
 
             if (person != null)
                 if (destination != -1) {
-                    getBuilding().call(person, destination);
-                    getStage().close();
-                }else
+
+                } else
                     throw new Exception("Destination must be an integer.");
             else
                 throw new Exception ("You must select a caller.");
@@ -68,5 +69,4 @@ public class CallLiftController extends Controller<Building> {
             errorText.textProperty().set(e.getMessage());
         }
     }
-
 }

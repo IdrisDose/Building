@@ -4,6 +4,7 @@ import au.edu.uts.ap.javafx.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.LevelView;
@@ -36,6 +37,7 @@ public class LiftController extends Controller<Lift> {
     private void initialize() {
         //Added the to prevent layout messup
         getStage().setResizable(false);
+        getStage().getIcons().add(new Image("/view/building.png"));
 
         //Subheading for dynamic change.
         subheading.textProperty().set(getLift().toString());

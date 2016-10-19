@@ -13,15 +13,11 @@ public class Person {
     private IntegerProperty level = new SimpleIntegerProperty();
     private IntegerProperty destination = new SimpleIntegerProperty();
     private BooleanProperty aboard = new SimpleBooleanProperty();
-    private StringProperty aboardText = new SimpleStringProperty("No");
 
     public Person(int id, String name, int level) {
         this.id.set(id);
         this.name.set(name);
         this.level.set(level);
-        this.destination.set(level);
-
-        startListeners();
     }
 
     // PROPERTIES
@@ -42,8 +38,9 @@ public class Person {
         return aboard.get();
     }
 
-    public StringProperty aboardProperty() {
-        return aboardText;
+    //Recently discovered the way to bind true/false to .then("Yes").otherwise("No") - Amazing (wish I knew this earlier)
+    public BooleanProperty aboardProperty() {
+        return aboard;
     }
     public ReadOnlyIntegerProperty idProperty() {
         return id;
@@ -118,14 +115,5 @@ public class Person {
     @Override
     public String toString() {
         return name.get();
-    }
-
-    private void startListeners() {
-       aboard.addListener((observable, oldValue, newValue) -> {
-           if (observable.getValue())
-               aboardText.set("Yes");
-           else
-               aboardText.set("No");
-       });
     }
 }

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Building;
@@ -40,6 +41,7 @@ public class PeopleController extends Controller<Building> {
     private void initialize() {
         //Added the to prevent layout messup
         getStage().setResizable(false);
+        getStage().getIcons().add(new Image("/view/building.png"));
         subheading.setText("People");
 
 
@@ -52,7 +54,7 @@ public class PeopleController extends Controller<Building> {
         destinationClm.setCellValueFactory(cellData ->
                 Bindings.concat("Level ", cellData.getValue().destinationProperty().asString()));
         aboardClm.setCellValueFactory(cellData ->
-                cellData.getValue().aboardProperty());
+                Bindings.when(cellData.getValue().aboardProperty()).then("Yes").otherwise("No"));
 
         closeBtn.onActionProperty().set(event -> getStage().close());
     }

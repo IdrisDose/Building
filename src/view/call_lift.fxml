@@ -27,7 +27,7 @@
     <!-- Main Contents-->
     <GridPane vgap="10" hgap="10" alignment="CENTER">
         <Label text="Caller:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <ComboBox fx:id="callerCb" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="100"/>
+        <ComboBox fx:id="callerCb" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="100" items="${controller.building.people}"/>
         <Label text="Destination:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
         <TextField fx:id="destinationTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2">

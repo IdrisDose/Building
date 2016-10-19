@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Building;
@@ -65,6 +66,7 @@ public class BuildingController extends Controller<Building> {
 
         //Added the to prevent layout messup
         getStage().setResizable(false);
+        getStage().getIcons().add(new Image("/view/building.png"));
 
         //Remove // to enable listview
         //liftsLv.setItems(getBuilding().getLifts());
