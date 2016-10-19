@@ -41,7 +41,7 @@ public class CallLiftController extends Controller<Building> {
         if (destinationTf.getText().matches("[0-9]*") && (!destinationTf.getText().isEmpty()))
             return Integer.parseInt(destinationTf.getText());
         else
-                throw new Exception("Desination must be an integer.");
+            throw new Exception("Desination must be an integer.");
     }
     @FXML
     private void initialize() {
