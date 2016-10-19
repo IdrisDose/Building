@@ -106,14 +106,14 @@ public class Building {
         }
     }
 
-    public boolean call(Person caller, int destination) throws Exception {
+    public void call(Person caller, int destination) throws Exception {
         Lift bestLift = bestLift(caller.getLevel(), destination);
         if (bestLift != null) {
             caller.call(destination);
             bestLift.call(caller);
-            return true;
-        } else
-            return false;
+        }
+        else
+            throw new Exception("No suitable lift found");
     }
 
     private void operate() {

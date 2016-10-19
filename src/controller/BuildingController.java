@@ -142,9 +142,7 @@ public class BuildingController extends Controller<Building> {
         */
 
         //Change enable button when valid lift is selected in TableView
-        liftsTv.getSelectionModel().selectedItemProperty().addListener(change -> {
-            viewBtn.setDisable(getLift() == null);
-        });
+        liftsTv.getSelectionModel().selectedItemProperty().addListener(change -> viewBtn.setDisable(getLift() == null));
 
         //Close Window Listener
         getStage().setOnHiding(event -> {

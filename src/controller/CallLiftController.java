@@ -44,25 +44,30 @@ public class CallLiftController extends Controller<Building> {
     }
 
     //Not going to move this to lambda as it's wayy to big.
+    //UPDATE 19/10/2016 - Re-reade requirements and saw that I need to pass these as errors instead.
     @FXML
     private void handleCall(ActionEvent event) throws Exception {
-        Person person = getSelectedPerson();
-        int destination = 0;
+        try {
+            Person person = getSelectedPerson();
+            int destination = 0;
 
-        if (!destinationTf.getText().isEmpty()) {
-            if(destinationTf.getText().matches("[0-9]*"))
-                destination = Integer.parseInt(destinationTf.getText());
-        }
+            if (!destinationTf.getText().isEmpty())
+                if (destinationTf.getText().matches("[0-9]*"))
+                    destination = Integer.parseInt(destinationTf.getText());
 
-        if (person != null)
-            if (destination == 0)
-                errorText.textProperty().set("Destination must be an integer");
-            else if (!getBuilding().call(person, destination))
-                errorText.textProperty().set("No suitable lift found.");
+
+            if (person != null)
+                if (destination == 0)
+                    throw new Exception("Destination must be an integer");
+                else {
+                    getBuilding().call(person, destination);
+                    getStage().close();
+                }
             else
-                getStage().close();
-        else
-            errorText.textProperty().set("You must select a caller.");
+                throw new Exception ("You must select a caller.");
+        } catch (Exception e){
+            errorText.textProperty().set(e.getMessage());
+        }
     }
 
 }

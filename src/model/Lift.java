@@ -239,9 +239,7 @@ public class Lift {
     private void startListeners() {
         passengers.addListener(new ListChangeListener<Person>() {
             @Override
-            public void onChanged(Change<? extends Person> c) {
-
-            }
+            public void onChanged(Change<? extends Person> c) { passengersSize.set(passengers.size()); }
         });
 
         queue.addListener(new ListChangeListener<Person>() {
