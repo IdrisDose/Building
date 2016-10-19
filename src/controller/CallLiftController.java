@@ -30,10 +30,19 @@ public class CallLiftController extends Controller<Building> {
         return stage;
     }
 
-    private Person getSelectedPerson() {
-        return callerCb.getSelectionModel().isEmpty() ? null :  callerCb.getSelectionModel().getSelectedItem();
+    private Person getSelectedPerson() throws Exception{
+        if(!callerCb.getSelectionModel().isEmpty() )
+            return callerCb.getSelectionModel().getSelectedItem();
+        else
+            throw new Exception ("You must select a caller.");
     }
 
+    private Integer getDestination() throws Exception{
+        if (destinationTf.getText().matches("[0-9]*") && (!destinationTf.getText().isEmpty()))
+            return Integer.parseInt(destinationTf.getText());
+        else
+                throw new Exception("Desination must be an integer.");
+    }
     @FXML
     private void initialize() {
         //Added the to prevent layout messup
@@ -48,23 +57,12 @@ public class CallLiftController extends Controller<Building> {
     //Not going to move this to lambda as it's wayy to big.
     //UPDATE 19/10/2016 - Re-read requirements and saw that I need to pass these as errors instead.
     //Changed 0 to -1 ... because why not?
+    //Made this even better .. thanks to late thinking
     @FXML
     private void handleCall(ActionEvent event) throws Exception {
         try {
-            Person person = getSelectedPerson();
-            int destination = -1;
-
-            if (!destinationTf.getText().isEmpty())
-                if (destinationTf.getText().matches("[0-9]*"))
-                    destination = Integer.parseInt(destinationTf.getText());
-
-            if (person != null)
-                if (destination != -1) {
-
-                } else
-                    throw new Exception("Destination must be an integer.");
-            else
-                throw new Exception ("You must select a caller.");
+            getBuilding().call(getSelectedPerson(), getDestination());
+            getStage().close();
         } catch (Exception e){
             errorText.textProperty().set(e.getMessage());
         }
